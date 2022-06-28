@@ -1,0 +1,23 @@
+:host {
+
+  display:block;
+  margin-top:1rem;
+  margin:auto;
+}
+
+.info-text{
+  text-align: center;
+}
+
+.item-image {
+  width:100%;
+}
+
+.item-image img {
+  width: 100%;
+  box-shadow: 1px 0px 9px 1px rgba(0,0,0,0.8);
+}
+
+mat-spinner {
+  margin:auto;
+}

@@ -1,0 +1,37 @@
+<div class="row" *ngIf="item">
+  <div class="col-md-7">
+    <div class="item-image">
+      <img [src]="item.imagePath" [alt]="item.title">
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-4">
+    <p>Content: {{ item.content }}</p>
+    <p>Date: {{ item.date }}</p>
+    <p>InitialBidPrice: {{ item.initialBidPrice }}</p>
+    <p>Start: {{ item.time.start }}</p>
+    <p>End: {{ item.time.end }}</p>
+    <div *ngIf="item">
+      <p> CurrentBidPrice: {{ price }}</p>
+      <p> Seller: {{ name }}</p>
+    </div>
+    <div *ngIf="isLoggedIn()">
+
+
+      <form class="example-form" [formGroup]="form" *ngIf="item" (submit)="OnBid()">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="BidPrice" [value]="newBidValue" formControlName="bidForm">
+          <mat-error *ngIf="form.get('bidForm').invalid">Entire Correct Value</mat-error>
+        </mat-form-field>
+        <button mat-button type="submit" color="accent">Bid</button>
+      </form>
+
+
+
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <div *ngIf="message" class="alert alert-primary">{{message}}</div>
+</div>

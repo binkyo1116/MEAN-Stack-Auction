@@ -1,0 +1,12 @@
+# Ignoring node_modules folders
+node_modules
+
+# Ignoring VSCode ide configs
+.vscode
+
+# Ignoring log files
+micro-service/*.log
+back-end/*.log
+
+#Ignoring images
+back-end/images/*
